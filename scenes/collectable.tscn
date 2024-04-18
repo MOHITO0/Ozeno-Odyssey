@@ -4,13 +4,13 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xij2m"]
 resource_local_to_scene = true
-size = Vector2(247, 142)
+size = Vector2(29, 33)
 
 [node name="Collectable" type="Area2D"]
 script = ExtResource("1_i5x2w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(113.5, 61)
+position = Vector2(4.5, 6.5)
 shape = SubResource("RectangleShape2D_xij2m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

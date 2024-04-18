@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bx2janx1w7nh4"]
+[gd_scene load_steps=13 format=3 uid="uid://bx2janx1w7nh4"]
 
 [ext_resource type="Texture2D" uid="uid://hk0m4diged0n" path="res://art/TilesetFloor.png" id="1_bgoy4"]
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_y3pb8"]
 [ext_resource type="Texture2D" uid="uid://dinrkfcpa184k" path="res://art/TilesetNature.png" id="2_t2gce"]
 [ext_resource type="PackedScene" uid="uid://ddtoo50h1mo73" path="res://scenes/player.tscn" id="3_54l7w"]
+[ext_resource type="PackedScene" uid="uid://cs0y32ielojep" path="res://scenes/lifepot.tscn" id="4_depks"]
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="4_tt0hw"]
 [ext_resource type="PackedScene" uid="uid://dyhh7n77x0si7" path="res://scenes/slime.tscn" id="5_ct3xg"]
 [ext_resource type="PackedScene" uid="uid://dyv4cxspg4n88" path="res://scenes/hearts_container.tscn" id="7_i4ek7"]
@@ -2532,11 +2533,16 @@ texture = ExtResource("2_t2gce")
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75, 7, 2.75, 8, 15.875, 7.75, 21.75, 6.25, 21.375, 2, 17.25, 0.25, 8, 1.125, 1.875, 0.75, -3.5, 0, -4.25, -0.125, -5.75, 6.5)
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xsuuj"]
+resource_name = "Collectables"
+scenes/1/scene = ExtResource("4_depks")
+
 [sub_resource type="TileSet" id="TileSet_tvo1i"]
 physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_rcx5o")
 sources/1 = SubResource("TileSetAtlasSource_o0vbp")
+sources/2 = SubResource("TileSetScenesCollectionSource_xsuuj")
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
@@ -2555,6 +2561,8 @@ layer_2/name = "trees"
 layer_2/y_sort_enabled = true
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(458756, 1, 0, 131073, 1, 0, 65544, 1, 0)
+layer_3/name = "Collectables"
+layer_3/tile_data = PackedInt32Array(327683, 2, 65536, 196613, 2, 65536, 262148, 2, 65536)
 
 [node name="slime" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("5_ct3xg")]
 position = Vector2(178, 123)

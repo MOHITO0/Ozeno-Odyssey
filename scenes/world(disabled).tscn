@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b8m4gq8tlyq1n"]
+[gd_scene load_steps=16 format=3 uid="uid://b8m4gq8tlyq1n"]
 
 [ext_resource type="PackedScene" uid="uid://ddtoo50h1mo73" path="res://scenes/player.tscn" id="1_6w5t4"]
 [ext_resource type="Texture2D" uid="uid://hk0m4diged0n" path="res://art/TilesetFloor.png" id="1_h1c60"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dk86wytqkrpgf" path="res://art/SpriteSheet16x16.png" id="3_rli4c"]
 [ext_resource type="Texture2D" uid="uid://bywdml3e5idup" path="res://art/NinjaAdventure/Backgrounds/Tilesets/TilesetHouse.png" id="4_cd38y"]
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="5_mpaha"]
+[ext_resource type="PackedScene" uid="uid://cs0y32ielojep" path="res://scenes/lifepot.tscn" id="5_u565e"]
 [ext_resource type="PackedScene" uid="uid://dyhh7n77x0si7" path="res://scenes/slime.tscn" id="7_u7q1s"]
 [ext_resource type="PackedScene" uid="uid://dyv4cxspg4n88" path="res://scenes/hearts_container.tscn" id="9_ii0ms"]
 
@@ -4471,6 +4472,10 @@ texture = ExtResource("4_cd38y")
 13:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:5/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_uemmi"]
+resource_name = "Collectables"
+scenes/1/scene = ExtResource("5_u565e")
+
 [sub_resource type="TileSet" id="TileSet_bckn2"]
 physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
@@ -4478,6 +4483,7 @@ sources/0 = SubResource("TileSetAtlasSource_p7kag")
 sources/1 = SubResource("TileSetAtlasSource_7vvpg")
 sources/2 = SubResource("TileSetAtlasSource_n77lo")
 sources/3 = SubResource("TileSetAtlasSource_606wu")
+sources/4 = SubResource("TileSetScenesCollectionSource_uemmi")
 
 [node name="world" type="Node2D"]
 
@@ -4496,6 +4502,8 @@ layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(327691, 2, 0, 262145, 1, 0, 131084, 1, 0, 131076, 1, 0, 131074, 1, 0, 327687, 2, 0, 524294, 1, 0, 589837, 1, 0, 458764, 1, 0, 327693, 1, 0, 262154, 2, 0, 327690, 2, 0, 327688, 2, 0, 262152, 2, 0, 262153, 2, 0, 327689, 2, 0, 262150, 2, 0, 262151, 2, 0, 262155, 2, 0, 327686, 2, 0, 655361, 2, 0, 589825, 2, 0, 524289, 2, 0, 458753, 2, 0, 786433, 524289, 0, 786436, 524289, 0, 786440, 524289, 0, 786443, 524289, 0, 786445, 524289, 0, 851982, 524289, 0, 983054, 524289, 0, 983041, 524289, 0, 1114113, 524289, 0, 917510, 786433, 0, 983051, 786433, 0, 917507, 786433, 0, 1114116, 786433, 0, 589834, 393217, 0, 589827, 393217, 0)
 layer_3/name = "Territoria"
 layer_3/tile_data = PackedInt32Array(-65535, 655363, 5, -65534, 655363, 5, -65533, 655363, 5, -65532, 655363, 5, -65531, 655363, 5, -65530, 655363, 5, -65529, 655363, 5, -65528, 655363, 5, -65527, 655363, 5, -65526, 655363, 5, -65525, 655363, 5, -65524, 655363, 5, -65523, 655363, 5, -65522, 655363, 5, -65521, 655363, 4, -65536, 655363, 4)
+layer_4/name = "Collectables"
+layer_4/tile_data = PackedInt32Array(262148, 4, 65536, 196611, 4, 65536, 262147, 4, 65536)
 
 [node name="player" parent="TileMap" instance=ExtResource("1_6w5t4")]
 position = Vector2(99, 60)
