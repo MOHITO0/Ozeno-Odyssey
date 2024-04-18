@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_y3pb8"]
 [ext_resource type="Texture2D" uid="uid://dinrkfcpa184k" path="res://art/TilesetNature.png" id="2_t2gce"]
 [ext_resource type="PackedScene" uid="uid://ddtoo50h1mo73" path="res://scenes/player.tscn" id="3_54l7w"]
-[ext_resource type="PackedScene" uid="uid://cs0y32ielojep" path="res://scenes/lifepot.tscn" id="4_depks"]
+[ext_resource type="PackedScene" uid="uid://cs0y32ielojep" path="res://scenes/collectables/lifepot.tscn" id="4_depks"]
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="4_tt0hw"]
-[ext_resource type="PackedScene" uid="uid://bx2nxt403bkad" path="res://scenes/sword.tscn" id="5_0j6mb"]
+[ext_resource type="PackedScene" uid="uid://bx2nxt403bkad" path="res://scenes/collectables/sword.tscn" id="5_0j6mb"]
 [ext_resource type="PackedScene" uid="uid://dyhh7n77x0si7" path="res://scenes/slime.tscn" id="5_ct3xg"]
 [ext_resource type="PackedScene" uid="uid://dyv4cxspg4n88" path="res://scenes/hearts_container.tscn" id="7_i4ek7"]
 
@@ -2564,16 +2564,14 @@ layer_2/y_sort_enabled = true
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(458756, 1, 0, 131073, 1, 0, 65544, 1, 0)
 layer_3/name = "Collectables"
-layer_3/tile_data = PackedInt32Array(327683, 2, 65536, 196613, 2, 65536, 262148, 2, 65536, 262152, 2, 196608)
+layer_3/tile_data = PackedInt32Array(327683, 2, 65536, 196613, 2, 65536, 262148, 2, 65536, 131081, 2, 196608, 196617, 2, 196608)
 
 [node name="slime" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("5_ct3xg")]
 position = Vector2(178, 123)
-collision_layer = 3
-collision_mask = 3
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="TileMap/slime"]
-position = Vector2(120, -72)
+position = Vector2(-62, -49)
 
 [node name="player" parent="TileMap" instance=ExtResource("3_54l7w")]
 position = Vector2(107, 79)
@@ -2592,8 +2590,6 @@ tilemap = NodePath("../..")
 [node name="slime2" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("5_ct3xg")]
 modulate = Color(0.670588, 1, 0.239216, 1)
 position = Vector2(124, 123)
-collision_layer = 3
-collision_mask = 3
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="TileMap/slime2"]

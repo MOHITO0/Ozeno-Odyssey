@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dk86wytqkrpgf" path="res://art/SpriteSheet16x16.png" id="3_rli4c"]
 [ext_resource type="Texture2D" uid="uid://bywdml3e5idup" path="res://art/NinjaAdventure/Backgrounds/Tilesets/TilesetHouse.png" id="4_cd38y"]
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="5_mpaha"]
-[ext_resource type="PackedScene" uid="uid://cs0y32ielojep" path="res://scenes/lifepot.tscn" id="5_u565e"]
+[ext_resource type="PackedScene" uid="uid://cs0y32ielojep" path="res://scenes/collectables/lifepot.tscn" id="5_u565e"]
 [ext_resource type="PackedScene" uid="uid://dyhh7n77x0si7" path="res://scenes/slime.tscn" id="7_u7q1s"]
 [ext_resource type="PackedScene" uid="uid://dyv4cxspg4n88" path="res://scenes/hearts_container.tscn" id="9_ii0ms"]
 

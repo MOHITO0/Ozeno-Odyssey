@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cs0y32ielojep"]
 
-[ext_resource type="PackedScene" uid="uid://buwp2be5cigb5" path="res://scenes/collectable.tscn" id="1_5im1h"]
+[ext_resource type="PackedScene" uid="uid://d1f6do30h6m3a" path="res://scenes/collectables/collectable.tscn" id="1_5im1h"]
 [ext_resource type="Texture2D" uid="uid://c3mtoah2sltdv" path="res://art/NinjaAdventure/Items/Potion/LifePot.png" id="2_bcpu2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkvxt"]

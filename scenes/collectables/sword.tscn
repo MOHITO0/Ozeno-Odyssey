@@ -1,12 +1,27 @@
 [gd_scene load_steps=8 format=3 uid="uid://bx2nxt403bkad"]
 
-[ext_resource type="PackedScene" uid="uid://d1f6do30h6m3a" path="res://scenes/collectable.tscn" id="1_ebt6f"]
-[ext_resource type="Texture2D" uid="uid://cv8hv04ibcjmb" path="res://art/NinjaAdventure/Items/Weapons/BigSword/Sprite.png" id="2_3jbsh"]
-[ext_resource type="Script" path="res://sword.gd" id="2_bbjit"]
+[ext_resource type="PackedScene" uid="uid://d1f6do30h6m3a" path="res://scenes/collectables/collectable.tscn" id="1_csjv1"]
+[ext_resource type="Script" path="res://scenes/collectables/sword.gd" id="2_yqril"]
+[ext_resource type="Texture2D" uid="uid://cv8hv04ibcjmb" path="res://art/NinjaAdventure/Items/Weapons/BigSword/Sprite.png" id="3_tscg0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8gts"]
 resource_local_to_scene = true
 size = Vector2(4, 16)
+
+[sub_resource type="Animation" id="Animation_iu3pg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_24mf3"]
 resource_name = "spin"
@@ -25,36 +40,21 @@ tracks/0/keys = {
 "values": [0.0, 6.28319]
 }
 
-[sub_resource type="Animation" id="Animation_iu3pg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n7ic7"]
 _data = {
 "RESET": SubResource("Animation_iu3pg"),
 "spin": SubResource("Animation_24mf3")
 }
 
-[node name="sword" instance=ExtResource("1_ebt6f")]
-script = ExtResource("2_bbjit")
+[node name="sword" instance=ExtResource("1_csjv1")]
+script = ExtResource("2_yqril")
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_i8gts")
 
 [node name="Sprite2D" parent="." index="1"]
-texture = ExtResource("2_3jbsh")
+texture = ExtResource("3_tscg0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 libraries = {
