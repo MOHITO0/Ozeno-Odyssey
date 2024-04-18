@@ -5,16 +5,15 @@ signal healthChanged
 @export var speed: int = 350
 @onready var animations = $AnimationPlayer
 @onready var effects = $Effects
-
+@onready var hurtBox = $hurtBox
 @export var maxHealth: int = 3
 @onready var currentHealth: int = maxHealth
 @onready var hurtTimer = $hurtTimer
 @export var knockbackPower: int = 300
 
-# Привет Никита
 var isHurt: bool = false
 
-var enemyCollisions = []
+
 
 func _ready():
 	effects.play("RESET")
@@ -46,8 +45,9 @@ func _physics_process(delta):
 	updateAnimation()
 	handleCollision()
 	if !isHurt:
-		for enemyArea in enemyCollisions:
-			hurtByEnemy(enemyArea)
+		for area in hurtBox.get_overlapping_areas():
+			if area.name == "hitBox":
+				hurtByEnemy(area)
 
 func hurtByEnemy(area):
 	currentHealth -= 1
@@ -64,8 +64,7 @@ func hurtByEnemy(area):
 	isHurt = false
 	
 func _on_hurt_box_area_entered(area):
-	if area.name == 'hitBox':
-		enemyCollisions.append(area)
+	pass
 		
 
 
@@ -77,4 +76,4 @@ func knockback(enemyVelocity: Vector2):
 
 
 func _on_hurt_box_area_exited(area):
-	enemyCollisions.erase(area)
+	pass
