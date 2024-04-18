@@ -10,6 +10,8 @@ signal healthChanged
 @onready var currentHealth: int = maxHealth
 @onready var hurtTimer = $hurtTimer
 @export var knockbackPower: int = 300
+
+# Привет Никита
 var isHurt: bool = false
 
 var enemyCollisions = []
