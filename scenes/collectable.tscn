@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://buwp2be5cigb5"]
+[gd_scene load_steps=3 format=3 uid="uid://d1f6do30h6m3a"]
 
 [ext_resource type="Script" path="res://scenes/collectable.gd" id="1_i5x2w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xij2m"]
 resource_local_to_scene = true
-size = Vector2(29, 33)
+size = Vector2(247, 142)
 
 [node name="Collectable" type="Area2D"]
 script = ExtResource("1_i5x2w")
