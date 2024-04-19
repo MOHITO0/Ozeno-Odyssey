@@ -14,7 +14,10 @@ config/name="Ozeno Odyssey"
 config/version="1.0"
 run/main_scene="res://scenes/world-1.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
+boot_splash/image="res://ozeno/ozeno-odyssey.png"
+boot_splash/use_filter=false
+config/icon="res://ozeno/ozeno-logo.png"
 
 [display]
 
