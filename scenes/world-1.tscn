@@ -2357,6 +2357,7 @@ texture = ExtResource("2_t2gce")
 8:5/0/texture_origin = Vector2i(-24, 16)
 8:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:5/0/physics_layer_0/angular_velocity = 0.0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3.18198, 0.707108, 8, 12.3744, 9.89949, 20.1525, 5.3033, 24.7487, 3.88908, 30.4056, 6.36396, 43.8406, 8.48528, 55.1543, 5.65685, 51.9724, 2.47487, 53.7401, -4.24265, 53.7401, -6.01041, 39.598, -6.71752, 36.416, -12.7279, 32.5269, -22.2739, 22.6274, -24.0416, 13.0815, -21.9203, 5.3033, -17.6777, -4.24265, -8)
 4:5/size_in_atlas = Vector2i(4, 3)
 4:5/0 = 0
 4:5/0/texture_origin = Vector2i(-24, 16)
@@ -2408,7 +2409,7 @@ script = ExtResource("1_y3pb8")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
-position = Vector2(2, 0)
+position = Vector2(2, 1)
 tile_set = SubResource("TileSet_tvo1i")
 format = 2
 layer_0/name = "ground"
@@ -2456,7 +2457,7 @@ material = SubResource("ShaderMaterial_mcp8r")
 offset_left = -14.0
 offset_top = 157.0
 offset_right = 271.0
-offset_bottom = 336.0
+offset_bottom = 419.0
 color = Color(1, 1, 1, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -59,5 +59,6 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_585ty")
 speed_scale = 1.5
 
-[node name="pickUp_Sound" type="AudioStreamPlayer2D" parent="." index="3"]
+[node name="pickUp" type="AudioStreamPlayer2D" parent="." index="3"]
 stream = ExtResource("3_nuink")
+area_mask = 3

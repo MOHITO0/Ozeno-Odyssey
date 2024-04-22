@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var sound = $pickUp_Sound
+@onready var sound = $pickUp
 @onready var animations = $AnimatedSprite2D
 
 func _ready():
