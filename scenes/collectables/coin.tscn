@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://bi6tbttxrv56d"]
+
+[ext_resource type="PackedScene" uid="uid://d1f6do30h6m3a" path="res://scenes/collectables/collectable.tscn" id="1_qqvw1"]
+[ext_resource type="Script" path="res://scenes/collectables/coin.gd" id="2_24hjj"]
+[ext_resource type="Texture2D" uid="uid://cr5ap0eg1mvai" path="res://art/Coin2.png" id="2_c3gli"]
+[ext_resource type="AudioStream" uid="uid://bndkggin4yajm" path="res://audio/coin_pickUp.wav" id="3_nuink"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcwk3"]
+resource_local_to_scene = true
+size = Vector2(10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gorm"]
+atlas = ExtResource("2_c3gli")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqilh"]
+atlas = ExtResource("2_c3gli")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6ufx"]
+atlas = ExtResource("2_c3gli")
+region = Rect2(20, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy450"]
+atlas = ExtResource("2_c3gli")
+region = Rect2(30, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_585ty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gorm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqilh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6ufx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy450")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="coin" instance=ExtResource("1_qqvw1")]
+script = ExtResource("2_24hjj")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_wcwk3")
+
+[node name="Sprite2D" parent="." index="1"]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_585ty")
+speed_scale = 1.5
+
+[node name="pickUp_Sound" type="AudioStreamPlayer2D" parent="." index="3"]
+stream = ExtResource("3_nuink")
