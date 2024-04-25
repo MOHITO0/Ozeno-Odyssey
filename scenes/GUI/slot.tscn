@@ -15,4 +15,13 @@ position = Vector2(10, 10)
 texture = ExtResource("1_3kkj8")
 vframes = 2
 
-[node name="item" type="Sprite2D" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="item" type="Sprite2D" parent="CenterContainer/Panel"]
