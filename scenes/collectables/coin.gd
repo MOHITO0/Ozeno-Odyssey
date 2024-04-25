@@ -6,6 +6,7 @@ extends Area2D
 func _ready():
 	animations.play("default")
 
+
 func collect():
-	sound.play()
 	queue_free()
+	sound.play()

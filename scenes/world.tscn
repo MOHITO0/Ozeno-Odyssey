@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c3agvdqfyrb6a"]
+[gd_scene load_steps=33 format=3 uid="uid://c3agvdqfyrb6a"]
 
 [ext_resource type="Texture2D" uid="uid://hk0m4diged0n" path="res://art/TilesetFloor.png" id="1_bgoy4"]
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_y3pb8"]
@@ -18,6 +18,8 @@
 [ext_resource type="Shader" path="res://scenes/snow.gdshader" id="10_hl15u"]
 [ext_resource type="Texture2D" uid="uid://da325ksoaokj7" path="res://art/NinjaAdventure/Backgrounds/Tilesets/TilesetReliefDetail.png" id="12_fsw1u"]
 [ext_resource type="Texture2D" uid="uid://tb8svjnobeqj" path="res://art/NinjaAdventure/Backgrounds/Tilesets/TilesetRelief.png" id="13_16wmt"]
+[ext_resource type="Script" path="res://scenes/GUI/CanvasLayer.gd" id="18_5jd6w"]
+[ext_resource type="PackedScene" uid="uid://bee7w8ri07m1f" path="res://scenes/GUI/inventory_gui.tscn" id="19_x72sx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rcx5o"]
 texture = ExtResource("1_bgoy4")
@@ -4833,5 +4835,23 @@ offset_bottom = 419.0
 color = Color(1, 1, 1, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("18_5jd6w")
 
 [node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("7_i4ek7")]
+
+[node name="InventoryGui" parent="CanvasLayer" instance=ExtResource("19_x72sx")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -41.5
+offset_right = 64.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="closed" from="CanvasLayer/InventoryGui" to="." method="_on_inventory_gui_closed"]
+[connection signal="opened" from="CanvasLayer/InventoryGui" to="." method="_on_inventory_gui_opened"]
