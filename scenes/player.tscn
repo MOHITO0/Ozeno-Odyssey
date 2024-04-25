@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddtoo50h1mo73"]
+[gd_scene load_steps=15 format=3 uid="uid://ddtoo50h1mo73"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_50rbg"]
 [ext_resource type="Texture2D" uid="uid://bhfapoubg1i2m" path="res://art/SpriteSheet.png" id="1_dkftb"]
+[ext_resource type="Resource" uid="uid://cvlupynlbn21i" path="res://inventory/playerInventory.tres" id="2_gqlsf"]
 
 [sub_resource type="Animation" id="Animation_6sj0u"]
 length = 0.001
@@ -152,6 +153,7 @@ z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_50rbg")
 knockbackPower = 450
+inventory = ExtResource("2_gqlsf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 clip_children = 2

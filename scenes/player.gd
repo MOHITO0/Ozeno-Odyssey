@@ -11,6 +11,8 @@ signal healthChanged
 @onready var hurtTimer = $hurtTimer
 @export var knockbackPower: int = 300
 
+@export var inventory: Inventory
+
 var isHurt: bool = false
 
 
