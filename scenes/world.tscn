@@ -4834,7 +4834,6 @@ color = Color(1, 1, 1, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 script = ExtResource("18_5jd6w")
 
 [node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("7_i4ek7")]
