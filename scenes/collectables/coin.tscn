@@ -1,9 +1,23 @@
-[gd_scene load_steps=11 format=3 uid="uid://bi6tbttxrv56d"]
+[gd_scene load_steps=11 format=3 uid="uid://d06bm83bnbcmg"]
 
 [ext_resource type="PackedScene" uid="uid://d1f6do30h6m3a" path="res://scenes/collectables/collectable.tscn" id="1_qqvw1"]
-[ext_resource type="Script" path="res://scenes/collectables/coin.gd" id="2_24hjj"]
 [ext_resource type="Texture2D" uid="uid://cr5ap0eg1mvai" path="res://art/Coin2.png" id="2_c3gli"]
 [ext_resource type="AudioStream" uid="uid://bndkggin4yajm" path="res://audio/coin_pickUp.wav" id="3_nuink"]
+
+[sub_resource type="GDScript" id="GDScript_y5wfp"]
+script/source = "extends Area2D
+
+@onready var sound = $pickUp
+@onready var animations = $AnimatedSprite2D
+
+func _ready():
+	animations.play(\"default\")
+
+
+func collect():
+	queue_free()
+	sound.play()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wcwk3"]
 resource_local_to_scene = true
@@ -46,7 +60,7 @@ animations = [{
 }]
 
 [node name="coin" instance=ExtResource("1_qqvw1")]
-script = ExtResource("2_24hjj")
+script = SubResource("GDScript_y5wfp")
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, 0)
