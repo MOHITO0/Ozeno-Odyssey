@@ -4,12 +4,12 @@ class_name Inventory
 
 signal updated
 
-@export var items: Array[InventoryItem]
+@export var slots: Array[InventorySlot]
 
 func insert(item: InventoryItem):
-	for i in range(items.size()):
-		if !items[i]:
-			items[i] = item
+	for i in range(slots.size()):
+		if !slots[i].item:
+			slots[i].item = item
 			break
 			
 	updated.emit()
