@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1r5f6goocljl"]
+
+[ext_resource type="Texture2D" uid="uid://cfmjygymn0xom" path="res://art/NinjaAdventure/Items/Weapons/Sword2/Sprite.png" id="1_ig1ed"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pho10"]
+size = Vector2(2, 11)
+
+[node name="Sword" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4.5)
+texture = ExtResource("1_ig1ed")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_pho10")

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 signal healthChanged
-
+@onready var weapon = $Weapon
 @export var speed: int = 350
 @onready var animations = $AnimationPlayer
 @onready var effects = $Effects
@@ -14,6 +14,8 @@ signal healthChanged
 @export var inventory: Inventory
 
 var isHurt: bool = false
+var lastAnimDirection: String = "Down"
+var isAttacking: bool = false
 
 
 
@@ -24,8 +26,20 @@ func getInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = moveDirection * speed
 	
+	if Input.is_action_just_pressed("attack"):
+		attack()
+	
+func attack():
+	animations.play("attack"+lastAnimDirection)
+	isAttacking = true
+	weapon.visible = true
+	await animations.animation_finished
+	weapon.visible = false
+	isAttacking = false
 
 func updateAnimation():
+	if isAttacking: 
+		return
 	if velocity.length() == 0:
 		animations.stop()
 	else: 
@@ -34,6 +48,7 @@ func updateAnimation():
 		elif velocity.x > 0: direction = "Right"
 		elif velocity.y < 0: direction = "Up"
 		animations.play("walk" + direction)
+		lastAnimDirection = direction
 
 
 func handleCollision():
