@@ -41,3 +41,9 @@ func _physics_process(delta):
 	updateVelocity()
 	move_and_slide()
 	updateAnimation()
+
+
+func _on_hurt_box_area_entered(area):
+	if area == $hitBox: return
+	queue_free()
+	
