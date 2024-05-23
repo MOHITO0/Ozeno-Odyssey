@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://ddtoo50h1mo73"]
+[gd_scene load_steps=21 format=3 uid="uid://ddtoo50h1mo73"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_50rbg"]
 [ext_resource type="Texture2D" uid="uid://bhfapoubg1i2m" path="res://art/SpriteSheet.png" id="1_dkftb"]
 [ext_resource type="Resource" uid="uid://cvlupynlbn21i" path="res://inventory/playerInventory.tres" id="2_gqlsf"]
 [ext_resource type="PackedScene" uid="uid://c1r5f6goocljl" path="res://scenes/sword.tscn" id="4_21xk8"]
+[ext_resource type="Script" path="res://scenes/Weapon.gd" id="4_x713g"]
 
 [sub_resource type="Animation" id="Animation_6sj0u"]
 length = 0.001
@@ -389,6 +390,7 @@ wait_time = 2.0
 [node name="Weapon" type="Node2D" parent="."]
 position = Vector2(6, 1)
 rotation = 2.0944
+script = ExtResource("4_x713g")
 
 [node name="Sword" parent="Weapon" instance=ExtResource("4_21xk8")]
 position = Vector2(-8.53865, -12.965)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1r5f6goocljl"]
+[gd_scene load_steps=4 format=3 uid="uid://c1r5f6goocljl"]
 
+[ext_resource type="Script" path="res://scenes/sword.gd" id="1_blqp0"]
 [ext_resource type="Texture2D" uid="uid://cfmjygymn0xom" path="res://art/NinjaAdventure/Items/Weapons/Sword2/Sprite.png" id="1_ig1ed"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pho10"]
@@ -8,6 +9,7 @@ size = Vector2(2, 11)
 [node name="Sword" type="Area2D"]
 collision_layer = 4
 collision_mask = 0
+script = ExtResource("1_blqp0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4.5)
