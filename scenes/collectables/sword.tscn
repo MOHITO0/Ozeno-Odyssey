@@ -1,13 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx2nxt403bkad"]
+[gd_scene load_steps=11 format=3 uid="uid://bx2nxt403bkad"]
 
 [ext_resource type="PackedScene" uid="uid://d1f6do30h6m3a" path="res://scenes/collectables/collectable.tscn" id="1_csjv1"]
 [ext_resource type="Script" path="res://scenes/collectables/sword.gd" id="2_yqril"]
 [ext_resource type="Resource" uid="uid://nidw5njj4slw" path="res://inventory/items/sword.tres" id="3_ghj6e"]
 [ext_resource type="Texture2D" uid="uid://cv8hv04ibcjmb" path="res://art/NinjaAdventure/Items/Weapons/BigSword/Sprite.png" id="3_tscg0"]
+[ext_resource type="Shader" path="res://scenes/collectables/highlight.gdshader" id="4_wkc5y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8gts"]
 resource_local_to_scene = true
 size = Vector2(4, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xceo3"]
+shader = ExtResource("4_wkc5y")
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/frequency = 0.35
+shader_parameter/highlight_speed = 6.0
+shader_parameter/highlight_width = 15.0
 
 [sub_resource type="Animation" id="Animation_iu3pg"]
 length = 0.001
@@ -56,6 +64,7 @@ position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_i8gts")
 
 [node name="Sprite2D" parent="." index="1"]
+material = SubResource("ShaderMaterial_xceo3")
 texture = ExtResource("3_tscg0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]

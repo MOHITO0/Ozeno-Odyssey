@@ -1,12 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs0y32ielojep"]
+[gd_scene load_steps=7 format=3 uid="uid://cs0y32ielojep"]
 
 [ext_resource type="PackedScene" uid="uid://d1f6do30h6m3a" path="res://scenes/collectables/collectable.tscn" id="1_5im1h"]
 [ext_resource type="Texture2D" uid="uid://c3mtoah2sltdv" path="res://art/NinjaAdventure/Items/Potion/LifePot.png" id="2_bcpu2"]
 [ext_resource type="Resource" uid="uid://c5lk53wc220f0" path="res://inventory/items/lifepot.tres" id="2_j2eua"]
+[ext_resource type="Shader" path="res://scenes/collectables/highlight.gdshader" id="3_xsag7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkvxt"]
 resource_local_to_scene = true
 size = Vector2(7.87551, 9.71582)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lq87y"]
+shader = ExtResource("3_xsag7")
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/frequency = 0.35
+shader_parameter/highlight_speed = 6.0
+shader_parameter/highlight_width = 15.0
 
 [node name="Lifepot" instance=ExtResource("1_5im1h")]
 scale = Vector2(1.01581, 1.02925)
@@ -18,4 +26,5 @@ scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_vkvxt")
 
 [node name="Sprite2D" parent="." index="1"]
+material = SubResource("ShaderMaterial_lq87y")
 texture = ExtResource("2_bcpu2")
